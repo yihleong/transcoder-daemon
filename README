@@ -52,3 +52,24 @@ For example, to transcode a media file to mpeg2 format, cp the file
 to /opt/media/mpeg2 directory. The transcoder daemon will monitor the
 directory for new file and then automatically trigger the transcoding
 process and save the transcoded mpeg2 file in the same directory.
+
+Step 5: Additional Info
+You may login to one of the trancoder node (e.g. 192.168.0.17) as root and execute the following command for k8s info.
+
+List running pods
+$kubectl get pods
+   
+Show pod details
+$kubectl describe pod <pod name>
+
+Get k8s all nodes
+$kubectl get nodes
+
+View transcoding logs:
+$docker ps | grep -i transcoder-daemon
+from the above output, grep the Container ID (e.g. ffel...)
+
+$docker logs <container_id>
+
+ 
+
